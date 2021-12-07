@@ -19,7 +19,7 @@ phases:
       - pwd
       - aws s3 cp s3://<bucket_name>/SQLscript.sql ./
       - ls
-      - PGPASSWORD=$DB_PASS psql -h <db_hostname> -p 5432 -d <db_name> -U <db_username> -a -q -v ON_ERROR_STOP=ON -1 -f ./SQLscript.sql
+      - PGPASSWORD=$DB_PASS psql -h <db_hostname> -p 5432 -d <db_name> -U $DB_USER -a -q -v ON_ERROR_STOP=ON -1 -f ./SQLscript.sql
       
   build: 
     commands: 
