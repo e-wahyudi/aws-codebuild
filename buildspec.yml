@@ -1,0 +1,28 @@
+version: 0.2
+
+env:
+  secrets-manager:
+    DB_USER: "secrets_name:key_name"
+    DB_PASS: "secrets_name:key_name"
+
+phases:
+  install:
+    on-failure: ABORT
+    commands:
+      - yum install postgresql -y
+      - yum install awscli -y
+
+  pre_build:
+    commands: 
+      - echo "running the psql command to lookup its version!"
+      - psql --version
+      - pwd
+      - aws s3 cp s3://<bucket_name>/SQLscript.sql ./
+      - ls
+      - PGPASSWORD=$DB_PASS psql -h <db_hostname> -p 5432 -d <db_name> -U <db_username> -a -q -v ON_ERROR_STOP=ON -1 -f ./SQLscript.sql
+      
+  build: 
+    commands: 
+      - echo This is the BUILD phase
+      - echo this the credential password $DB_USER
+      - echo this the credential password $DB_PASS
