@@ -1,10 +1,10 @@
-# aws-codebuild
-## Execute SQL script within CodeBuild job
+## aws-codebuild
+#### Execute SQL script within CodeBuild job
 
-###### Synopsis
+##### Synopsis
 This is a sample of simple AWS CodeBuild job that connects to a PostgreSQL DB and execute SQL script to update its DB Schema. This sample does not include the SQL script.  This includes the terraform script of building out the CodeBuild infrastructure as well.
 
-###### Requirements/Pre-requisites
+##### Requirements/Pre-requisites
 - Ensure that you have at least 1 private subnet attached to NAT gateway/instance to allow CodeBuild to access the internet to download any dependencies. This would also allow CodeBuld to communicate with the AWS Services that will be used in this sample. For reference on setting up VPC with private subnet along with NAT Gateway, please see [this article](https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-network-internet-NAT-gateway.html).
 - An S3 Bucket (does **NOT** require public access) - for this sample, we'll be working in **us-east-1** region
 - Secret Manager to store/encrpyt the Database username and password
