@@ -1,4 +1,4 @@
-## aws-codebuild
+## aws-codebuild-postgreSQL
 #### Execute SQL script within CodeBuild job
 
 ##### Synopsis
