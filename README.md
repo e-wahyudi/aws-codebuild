@@ -16,4 +16,5 @@ This is a sample of simple AWS CodeBuild job that connects to a PostgreSQL DB an
 
 #### Workflow Diagram
 
-![image](https://user-images.githubusercontent.com/92599121/147252527-65134369-ac5c-4840-8131-2cb3769c3253.png)
+![WorkFlow Diagram](https://user-images.githubusercontent.com/92599121/147253376-2016ea2b-1145-44c2-8543-fc09b0dd41f6.png)
+
