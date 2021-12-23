@@ -13,3 +13,7 @@ This is a sample of simple AWS CodeBuild job that connects to a PostgreSQL DB an
 - IAM role that can be used by the CodeBuild job to interact with Secret Manager(read access), your S3 bucket(read access) and CloudWatch Log Group(read/write access). 
 - IAM User with Access/Secret Key for you to run your terraform script locally from your computer. The IAM user should have permissions to create CodeBuild job and also to be able to attach IAM role.
 - You could also leverage a SAML-Federated IAM role where you can obtain Access/Secret/SessionToken to run the Terraform script. There are other ways to obtain programmatic access into AWS; besides the above mentioned.
+
+#### Workflow Diagram
+
+![image](https://user-images.githubusercontent.com/92599121/147252527-65134369-ac5c-4840-8131-2cb3769c3253.png)
