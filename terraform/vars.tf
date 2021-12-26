@@ -1,5 +1,5 @@
 variable "job_name" {
-  default     = "codebuild job name"
+  default     = "<codebuild job name>"
   description = "Code Build Job name"
 }
 
@@ -9,44 +9,44 @@ variable "job_description" {
 }
 
 variable "vpc" {
-  default     = "vpc-12345678"
+  default     = "<vpc_ID>"
   description = "specify VPC ID here"
 }
 
 variable "subnet1" {
-  default     = "subnet-12345"
+  default     = "<subnet_ID>"
   description = "Please use subnets that have NAT gateway/instance associated with"
 }
 
 variable "subnet2" {
-  default     = "subnet-67890"
+  default     = "<subnet_ID>"
   description = "Please use subnets that have NAT gateway/instance associated with"
 }
 
 variable "subnet3" {
-  default     = "subnet-11223344"
+  default     = "<subnet_ID>"
   description = "Please use subnets that have NAT gateway/instance associated with"
 }
 
 variable "log_group" {
   type    = string
-  default = "log_group_name"
-  description = "specify cloudwatch log group name here - this is optional"
+  default = ""
+  description = "specify cloudwatch log group name here - this is optional, if blank, it will be stored in log group named: /aws/codebuild/*"
 }
 
 variable "log_stream" {
   type    = string
-  default = "log_group_stream"
-  description = "specify cloudwatch log group stream name here - this is optional"
+  default = ""
+  description = "specify cloudwatch log group stream name here - this is optional, if blank, it will store logs in the log group above /aws/codebuild/<job_name>"
 }
 
 variable "svc_role" {
-  default     = "arn:aws:iam::012345678901:role/role_name"
+  default     = "<service_role_ARN>"
   description = "specify CodeBuild IAM service role here"
 }
 
 variable "security_grp" {
-  default     = "sg-1a2b3c4d5e6f7g"
+  default     = "sg-XXXXXXXX"
   description = "CodeBuild job security group, only requires outbound, can use this same one in nonprod acct"
 }
 
